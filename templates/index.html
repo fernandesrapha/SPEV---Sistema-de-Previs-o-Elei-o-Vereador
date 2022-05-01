@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Previsão de Eleição Para Vereador</title>
+
+</head>
+<body>
+    <div style="color:rgb(0, 0, 0);" class="container">
+        <h2 class='container-heading'><span class="heading_font">Sistema de Previsão de Eleição Para Vereador</span></h2>
+    </div>
+
+    <div style="color:rgb(0, 0, 0);" class="ml-container">
+        <form action="{{ url_for('predict') }}" method="POST">
+            <br>
+            <br>
+            <h3>Número da Legenda do Partido</h3>
+            <input id="primeiro" name="partido" placeholder="Legenda do Partido" title ="Legenda do Partido" required="required">
+            <br>
+            <h3>Idade do Candidato na Data da Posse</h3>
+            <input id="segundo" name="idade_posse" placeholder="Idade" title="Idade" required="required">
+            <br>
+            <h3>Gênero</h3>
+            <input id="terceiro" name="genero" placeholder="Código do Gênero" title="Masculino = 2, Feminimo = 4, Não divulgável = -4" required="required">
+            <br>
+            <h3>Escolaridade</h3>
+            <input id="quarto" name="escolaridade" placeholder="Código da Escolaridade" title="2 = Lê e escreve, 3 = Fundamental Incompleto, 4 = Fundamental Completo, 5 = Médio Incompleto, 
+            6 = Médio Completo, 7 = Superior Incompleto, 8 = Superior Completo" required="required">
+            <br>
+            <h3>Estado Civil</h3>
+            <input id="quinto" name="estado_civil" placeholder="Código do Estado Civil" title="1 = Solteiro(a), 3 = Casado(a), 5 = Viúvo(a), 7 = Seperado(a) Judicialmente, 9 = Divorciado(a)" required="required">
+            <br>
+            <h3>Cor/Raça</h3>
+            <input id="sexto" name="cor_raca" placeholder="Código da Cor/Raça" title="1 = Branco, 2 = Preto, 3 = Pardo, 4 = Amarelo, 5 = Indigena, 6 = Não Informado" required="required">
+            <br>
+            <h3>Ocupação</h3>
+            <input id="setimo" name="ocupacao" placeholder="Código da Ocupação" title ="Código da Ocupação do Candidato" required="required">
+            <h3>Reeleição</h3>
+            <input id="oitavo" name="reeleicao" placeholder="Não = 0, Sim = 1" title ="Não = 0, Sim = 1" required="required">
+            <h3>Valor Despesas Contratadas</h3>
+            <input id="nono" name="despesa" placeholder="Valor em Reais" title="Valor das Despesas Contratadas" required="required">
+            <br>
+            <h3>Valor Total dos Bens do Candidato</h3>
+            <input id="decimo" name="bens" placeholder="Valor Em Reais" title="Valor Total dos Bens" required="required">
+            <h3>Quantidade de Votos Nominais</h3>
+            <input id="decimoprimeiro" name="votos" placeholder="Quantidade" title="Quantidade de Votos " required="required">
+            <br>
+            <br>
+            <br>
+            <button id="sub" type="submit ">Enviar</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class='footer-description'>Raphael Fernandes</p>
+
+        </form>
+    </div>
+
+
+
+
+<style>
+
+/* Background Image */
+body
+{
+
+background-image:url(https://i.ibb.co/ypx7r73/4498544.jpg);
+height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+
+}
+
+/* Color */
+body{
+	font-family: Arial, Helvetica,sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+
+/* Heading Font */
+.container-heading{
+    margin: 0;
+}
+
+.heading_font{
+    color: rgb(255, 255, 255);
+	font-family: 'Arial';
+	font-size: 50px;
+	font-weight: normal;
+}
+
+
+
+/* Box */
+        #primeiro {
+            border-radius: 14px;
+            height: 30px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #segundo {
+            border-radius: 14px;
+            height: 30px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #terceiro {
+            border-radius: 14px;
+            height: 30px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #quarto {
+            border-radius: 14px;
+            height: 30px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #quinto {
+            border-radius: 14px;
+            height: 30px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #sexto {
+            border-radius: 14px;
+            height: 30px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #setimo {
+            border-radius: 14px;
+            height: 30px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;;
+        }
+
+        #oitavo {
+            border-radius: 14px;
+            height: 30px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #nono {
+            border-radius: 14px;
+            height: 30px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #decimo {
+            border-radius: 14px;
+            height: 30px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #decimoprimeiro {
+            border-radius: 14px;
+            height: 30px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        
+
+
+/* Submit Button */
+#sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+} 
+
+
+
+
+
+
+</style>
+
+
+</body>
+
+</html>
+
+
